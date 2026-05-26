@@ -2,40 +2,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Sticky Header
     const header = document.getElementById('header');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
     // 2. Mobile Menu Toggle
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu ul li a');
 
-    mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = mobileToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-
-    // Close mobile menu when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
             const icon = mobileToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            if (icon) {
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
         });
-    });
+
+        // Close mobile menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
 
     // 3. Scroll Reveal Animations uses Intersection Observer
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
@@ -315,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rejectAllBtn) rejectAllBtn.addEventListener('click', () => saveConsent(false, false));
         if (closeBannerBtn) closeBannerBtn.addEventListener('click', () => saveConsent(false, false));
         if (customizeBtn) customizeBtn.addEventListener('click', () => {
-            cookieModal.classList.add('show');
+            if (cookieModal) cookieModal.classList.add('show');
             // Check current toggles state based on local storage if available
             const saved = localStorage.getItem('lorenzo_cookie_consent');
             if(saved) {
@@ -331,7 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cookieModal) {
         if (closeModalBtn) closeModalBtn.addEventListener('click', () => cookieModal.classList.remove('show'));
         if (savePreferencesBtn) savePreferencesBtn.addEventListener('click', () => {
-            saveConsent(toggleAnalytics.checked, toggleMarketing.checked);
+            const hasAnalytics = toggleAnalytics ? toggleAnalytics.checked : false;
+            const hasMarketing = toggleMarketing ? toggleMarketing.checked : false;
+            saveConsent(hasAnalytics, hasMarketing);
         });
         
         // Close on clicking outside modal
@@ -501,6 +511,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!slideTrack) return;
 
         const slides = document.querySelectorAll('.slide');
+        if (slides.length === 0) return;
+        
         const prevBtn = document.querySelector('.slider-btn.prev-btn');
         const nextBtn = document.querySelector('.slider-btn.next-btn');
 
