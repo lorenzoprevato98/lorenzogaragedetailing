@@ -403,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Responses Logic
         const responses = [
+            { keywords: ["prenot", "appuntament", "fissare", "detail", "prenoto"], reply: "Certamente! Puoi richiedere un appuntamento o prenotare un trattamento di detailing comodamente tramite WhatsApp cliccando su <a href='https://wa.me/393475525445?text=Salve,%20vorrei%20prenotare%20un%20trattamento%20di%20detailing%20per%20la%20mia%20auto.' target='_blank' style='color: var(--gold); text-decoration: underline; font-weight: bold;'>questo link diretto</a>, oppure puoi scorrere in fondo alla pagina per compilare il nostro modulo di contatto." },
             { keywords: ["prezz", "cost", "preventiv", "quanto", "pagare", "euro"], reply: "I nostri prezzi variano in base alle condizioni dell'auto e al trattamento scelto. I lavaggi completi hanno prezzi base, mentre i trattamenti nanotecnologici richiedono un preventivo su misura. Puoi usare il modulo nella sezione contatti o il pulsante 'Prenota Ora' per scriverci su WhatsApp." },
             { keywords: ["dove", "indirizzo", "trova", "sede", "posizione", "siete"], reply: "Ci troviamo in Via Liviana, 126, 35038 Torreglia (PD), Italia. Puoi trovare la mappa nella sezione contatti." },
             { keywords: ["orari", "aperto", "chiuso", "quando"], reply: "Riceviamo esclusivamente su appuntamento. Puoi contattarci tramite WhatsApp o il modulo sul sito per fissare un incontro." },
@@ -438,7 +439,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const addMessage = (text, typeClass) => {
             const msgDiv = document.createElement('div');
             msgDiv.classList.add('msg', typeClass);
-            msgDiv.textContent = text;
+            if (typeClass === 'user-msg') {
+                msgDiv.textContent = text;
+            } else {
+                msgDiv.innerHTML = text;
+            }
             chatbotMessages.appendChild(msgDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         };
