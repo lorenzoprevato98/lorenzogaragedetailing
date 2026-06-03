@@ -82,6 +82,7 @@ ul {
 }
 
 .hero .text-gold {
+    color: var(--gold) !important;
     display: inline !important;
     font-size: inherit !important;
     font-weight: inherit !important;

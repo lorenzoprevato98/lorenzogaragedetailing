@@ -214,26 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleAnalytics = document.getElementById('toggleAnalytics');
     const toggleMarketing = document.getElementById('toggleMarketing');
 
-    const GA4_ID = '[INSERIRE_ID_GA4]';
-
-    const loadGA4 = () => {
-        if(window.ga4Loaded) return;
-        const script1 = document.createElement('script');
-        script1.async = true;
-        script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
-        document.head.appendChild(script1);
-        
-        const script2 = document.createElement('script');
-        script2.innerHTML = `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA4_ID}');
-        `;
-        document.head.appendChild(script2);
-        window.ga4Loaded = true;
-    };
-
+    // GA4 loaded statically in HTML using Google Consent Mode
     const loadCalendly = () => {
         const blockedWidgets = document.querySelectorAll('.calendly-inline-widget[data-blocked-url]');
         
@@ -270,8 +251,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const applyConsent = (consent) => {
-        if (consent.analytics) {
-            loadGA4();
+        if (window.gtag) {
+            gtag('consent', 'update', {
+                'analytics_storage': consent.analytics ? 'granted' : 'denied',
+                'ad_storage': consent.marketing ? 'granted' : 'denied',
+                'ad_user_data': consent.marketing ? 'granted' : 'denied',
+                'ad_personalization': consent.marketing ? 'granted' : 'denied'
+            });
         }
         if (consent.marketing) {
             loadCalendly();
