@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.lorenzogaragedetailing.it/sitemap.xml
+Sitemap: https://lorenzogaragedetailing.it/sitemap.xml
