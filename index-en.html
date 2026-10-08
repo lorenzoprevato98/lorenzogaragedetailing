@@ -427,8 +427,8 @@
 
             <section class="infinite-slider-section">
                 <div class="infinite-slider" style="margin-top: 2rem;">
-                    <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="slider-btn prev-btn" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next-btn" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
                     <div class="slide-track">
                         <div class="slide"><img src="Img/Rosso/IMG_0003.webp" alt="Portfolio Auto" loading="lazy"></div>
                         <div class="slide"><img src="Img/Rosso/ferrari-488-lucidatura-padova.webp" alt="Ferrari 488 dopo lucidatura carrozzeria" loading="lazy"></div>
@@ -818,7 +818,7 @@
         <div class="cookie-modal">
             <div class="cookie-modal-header">
                 <h3>Cookie Preferences</h3>
-                <button id="closeModalBtn" class="cookie-modal-close"><i class="fas fa-times"></i></button>
+                <button id="closeModalBtn" class="cookie-modal-close" aria-label="Close cookie preferences"><i class="fas fa-times"></i></button>
             </div>
             
             <div class="cookie-option">
@@ -826,8 +826,8 @@
                     <h4>Technical Cookies (Necessary)</h4>
                     <p>Fundamental for security and navigation (e.g. Cloudflare). Cannot be disabled.</p>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" checked disabled>
+                <label class="switch" for="toggleTechnical">
+                    <input type="checkbox" id="toggleTechnical" aria-label="Technical Cookies (Necessary)" checked disabled>
                     <span class="slider"></span>
                 </label>
             </div>
@@ -837,8 +837,8 @@
                     <h4>Statistical Cookies</h4>
                     <p>They help us measure site traffic in an aggregated way (Google Analytics 4).</p>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" id="toggleAnalytics">
+                <label class="switch" for="toggleAnalytics">
+                    <input type="checkbox" id="toggleAnalytics" aria-label="Statistical Cookies">
                     <span class="slider"></span>
                 </label>
             </div>
@@ -848,8 +848,8 @@
                     <h4>Marketing / Functional Cookies</h4>
                     <p>Enable advanced widgets and profiled tracking (necessary for bookings via Calendly).</p>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" id="toggleMarketing">
+                <label class="switch" for="toggleMarketing">
+                    <input type="checkbox" id="toggleMarketing" aria-label="Marketing / Functional Cookies">
                     <span class="slider"></span>
                 </label>
             </div>
@@ -862,7 +862,7 @@
 
     <!-- Chatbot Widget -->
     <div id="chatbot" class="chatbot-container">
-        <div class="chatbot-toggle" id="chatbotToggle">
+        <div class="chatbot-toggle" id="chatbotToggle" role="button" tabindex="0" aria-label="Open chat assistant">
             <i class="fas fa-comment-dots"></i>
             <span class="tooltip">Need help?</span>
         </div>
@@ -871,7 +871,7 @@
                 <div>
                     <i class="fas fa-robot"></i> Lorenzo AI
                 </div>
-                <button id="chatbotClose"><i class="fas fa-times"></i></button>
+                <button id="chatbotClose" aria-label="Close chat"><i class="fas fa-times"></i></button>
             </div>
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="msg ai-msg">
@@ -879,17 +879,17 @@
                 </div>
             </div>
             <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Type a message..." />
-                <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+                <input type="text" id="chatbotInput" placeholder="Type a message..." aria-label="Type a message" />
+                <button id="chatbotSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
-        <button class="lightbox-close"><i class="fas fa-times"></i></button>
-        <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-        <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        <button class="lightbox-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
         <div class="lightbox-content">
             <img src="" alt="Expanded Gallery" class="lightbox-img" id="lightbox-img" loading="lazy">
         </div>
@@ -899,7 +899,7 @@
     <div class="wa-float-container">
         <div id="wa-popup" class="wa-popup">
             <div class="wa-popup-content">
-                <button id="wa-popup-close" class="wa-popup-close"><i class="fas fa-times"></i></button>
+                <button id="wa-popup-close" class="wa-popup-close" aria-label="Close WhatsApp popup"><i class="fas fa-times"></i></button>
                 <p>Do you have any questions? Write us on WhatsApp!</p>
             </div>
         </div>

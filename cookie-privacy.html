@@ -180,7 +180,7 @@
         <div class="cookie-modal">
             <div class="cookie-modal-header">
                 <h3>Preferenze Cookie</h3>
-                <button id="closeModalBtn" class="cookie-modal-close"><i class="fas fa-times"></i></button>
+                <button id="closeModalBtn" class="cookie-modal-close" aria-label="Chiudi preferenze cookie"><i class="fas fa-times"></i></button>
             </div>
             
             <div class="cookie-option">
@@ -188,8 +188,8 @@
                     <h4>Cookie Tecnici (Necessari)</h4>
                     <p>Fondamentali per la sicurezza e la navigazione (es. Cloudflare). Non disattivabili.</p>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" checked disabled>
+                <label class="switch" for="toggleTechnical">
+                    <input type="checkbox" id="toggleTechnical" aria-label="Cookie Tecnici (Necessari)" checked disabled>
                     <span class="slider"></span>
                 </label>
             </div>
@@ -199,8 +199,8 @@
                     <h4>Cookie Statistici</h4>
                     <p>Ci aiutano a misurare il traffico del sito in modo aggregato (Google Analytics 4).</p>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" id="toggleAnalytics">
+                <label class="switch" for="toggleAnalytics">
+                    <input type="checkbox" id="toggleAnalytics" aria-label="Cookie Statistici">
                     <span class="slider"></span>
                 </label>
             </div>
@@ -210,8 +210,8 @@
                     <h4>Cookie di Marketing / Funzionali</h4>
                     <p>Abilitano widget avanzati e tracciamento profilato (necessari per le prenotazioni via Calendly).</p>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" id="toggleMarketing">
+                <label class="switch" for="toggleMarketing">
+                    <input type="checkbox" id="toggleMarketing" aria-label="Cookie di Marketing / Funzionali">
                     <span class="slider"></span>
                 </label>
             </div>
