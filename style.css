@@ -299,7 +299,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(5, 5, 5, 0.9)), url('Img/Rosso/ferlorUPDHORv2.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(5, 5, 5, 0.9)), url('Img/Rosso/ferlorUPDVERT.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1742,26 +1742,76 @@ input:checked + .slider:before {
     .lightbox-next { right: 10px; width: 40px; height: 40px; font-size: 1.2rem; }
 }
 
-/* WhatsApp Popup */
-.wa-popup {
+/* WhatsApp Float Widget */
+.wa-float-container {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999;
+}
+
+.wa-float-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: var(--transition);
+    position: relative;
+}
+
+.wa-float-btn:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+    color: var(--white);
+}
+
+.wa-float-btn .tooltip {
+    position: absolute;
+    left: 75px;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.wa-float-btn:hover .tooltip {
+    opacity: 1;
+}
+
+.wa-popup {
+    position: absolute;
+    bottom: 75px;
+    left: 0;
     background-color: var(--dark-grey);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 1.5rem;
+    padding: 1.2rem;
     z-index: 10000;
-    transform: translateY(150%);
+    transform: translateY(20px);
     opacity: 0;
+    pointer-events: none;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
-    max-width: 320px;
+    width: 280px;
     border-left: 4px solid #25D366;
 }
 
 .wa-popup.show {
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
 }
 
 .wa-popup-content {
@@ -1770,12 +1820,12 @@ input:checked + .slider:before {
 
 .wa-popup-close {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: -5px;
+    right: -5px;
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -1785,29 +1835,10 @@ input:checked + .slider:before {
 }
 
 .wa-popup p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    margin: 0;
     color: var(--white);
     line-height: 1.4;
-}
-
-.btn-wa {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #25D366;
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-wa:hover {
-    background-color: #128C7E;
-    color: white;
 }
 
 /* FAQ Section */
@@ -1879,4 +1910,79 @@ input:checked + .slider:before {
 .footer-faq-link:hover {
     color: var(--gold);
     padding-left: 5px;
+}
+
+/* Service Card CTA Buttons */
+.btn-service-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-service-cta:hover {
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.btn-service-cta i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-service-cta:hover i {
+    transform: translateX(2px);
+}
+
+
+
+/* Service Card mobile interactions override */
+@media screen and (max-width: 768px) {
+    .service-card .btn-service-cta {
+        display: none;
+    }
+    .service-card.expanded .btn-service-cta {
+        display: inline-flex;
+        margin-top: 1.2rem;
+        animation: fadeIn 0.3s ease;
+    }
+}
+
+/* Responsive mobile scaling for float widgets */
+@media screen and (max-width: 480px) {
+    .wa-float-container {
+        bottom: 15px;
+        left: 15px;
+    }
+    .wa-float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+    .chatbot-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    .chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .chatbot-window {
+        width: calc(100vw - 30px);
+        right: 0px;
+        bottom: 60px;
+    }
+    .wa-popup {
+        width: calc(100vw - 30px);
+        bottom: 65px;
+        left: 0;
+    }
 }

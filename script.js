@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let imagesSrc = [];
 
         if (lightbox && galleryElements.length > 0) {
-            // Raccogliamo i src unici per evitare duplicati nello slider
+            // Raccogliamo i src unici per evitare duplicati nello slider all'avvio
             const uniqueSrcs = new Set();
             galleryElements.forEach(el => {
                 const img = el.querySelector('img');
@@ -470,6 +470,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.addEventListener('click', () => {
                     const img = el.querySelector('img');
                     if (!img) return;
+                    
+                    // Raccogliamo solo i src delle immagini attualmente visibili per la navigazione del lightbox
+                    imagesSrc = [];
+                    const activeUniqueSrcs = new Set();
+                    galleryElements.forEach(item => {
+                        if (window.getComputedStyle(item).display !== 'none') {
+                            const itemImg = item.querySelector('img');
+                            if (itemImg && !activeUniqueSrcs.has(itemImg.src)) {
+                                activeUniqueSrcs.add(itemImg.src);
+                                imagesSrc.push(itemImg.src);
+                            }
+                        }
+                    });
+
                     const src = img.src;
                     currentImageIndex = imagesSrc.indexOf(src);
                     if (currentImageIndex === -1) currentImageIndex = 0;
@@ -658,4 +672,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 14. Stop Propagation on Service Card CTA click (for mobile accordion)
+    const serviceCtaLinks = document.querySelectorAll('.btn-service-cta');
+    serviceCtaLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
+
 });

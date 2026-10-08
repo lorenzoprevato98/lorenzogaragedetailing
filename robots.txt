@@ -1,0 +1,6 @@
+# robots.txt per Lorenzo Garage Detailing
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.lorenzogaragedetailing.it/sitemap.xml
