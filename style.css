@@ -826,6 +826,26 @@ footer {
     font-size: 0.85rem;
 }
 
+.cookie-manage-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: inherit;
+    color: var(--gold);
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 15px;
+    display: inline;
+    vertical-align: baseline;
+    transition: color 0.3s ease;
+}
+
+.cookie-manage-btn:hover {
+    color: #fff;
+}
+
 /* Animation Classes */
 .reveal-up {
     opacity: 0;

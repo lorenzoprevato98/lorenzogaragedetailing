@@ -152,7 +152,7 @@
             <div class="container text-center">
                 <p style="margin-bottom: 5px; line-height: 1.8;"><strong>Lorenzo Garage Detailing di Lorenzo Prevato</strong><br>
                 Via Liviana, 126 – 35038 Torreglia (PD) | VAT: 05726200289 | Email: info@lorenzogaragedetailing.it<br>
-                <a href="javascript:void(0)" onclick="window.openCookieBanner()" style="text-decoration: underline; color: var(--gold); margin-right: 15px;">Manage Consent</a>
+                <button type="button" onclick="window.openCookieBanner()" class="cookie-manage-btn" style="background: none; border: none; padding: 0; font: inherit; font-size: inherit; color: var(--gold); text-decoration: underline; cursor: pointer; margin-right: 15px;">Manage Consent</button>
                 <a href="cookie-privacy-en.html" style="text-decoration: underline; color: var(--gold);">Privacy & Cookie Policy</a></p>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">Operation carried out pursuant to art. 1, paragraphs 54 to 89, l. n. 190 of 2014 - Flat-rate tax regime.</p>
                 <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 15px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5;">Ferrari®, Cavallino Rampante®, and all related trademarks are registered trademarks of Ferrari S.p.A. This website is not affiliated with, associated with, sponsored by, or endorsed by Ferrari S.p.A. or any other car manufacturers mentioned or depicted herein. All trademarks, logos, and car models belong to their respective owners and are used here for descriptive purposes only. The photographs published on the website are intended solely as visual and demonstrative proof of the detailing services actually performed.</p>
@@ -160,5 +160,68 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Banner (GDPR 2026) -->
+    <div id="cookieBanner" class="cookie-banner">
+        <button id="closeBannerBtn" class="cookie-banner-close" aria-label="Close and reject"><i class="fas fa-times"></i></button>
+        <div class="cookie-banner-header">
+            <h4>Privacy and Cookie Policy</h4>
+            <p>We use essential technical cookies, as well as third-party statistical and marketing cookies (such as Google Analytics and Calendly) to offer you the best experience. Click "Accept All" to consent, "Only Essentials" to reject them, or "Customize" for your preferences. For details: <a href="cookie-privacy-en.html">Cookie & Privacy Policy</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button id="acceptAllBtn" class="btn btn-outline" style="border-color: var(--silver);">Accept All</button>
+            <button id="rejectAllBtn" class="btn btn-outline" style="border-color: var(--silver);">Only Essentials</button>
+            <button id="customizeBtn" class="btn btn-outline" style="border-color: var(--silver);">Customize</button>
+        </div>
+    </div>
+
+    <!-- Cookie Modal (Customize) -->
+    <div id="cookieModal" class="cookie-modal-overlay">
+        <div class="cookie-modal">
+            <div class="cookie-modal-header">
+                <h3>Cookie Preferences</h3>
+                <button id="closeModalBtn" class="cookie-modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Technical Cookies (Necessary)</h4>
+                    <p>Fundamental for security and navigation (e.g. Cloudflare). Cannot be disabled.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked disabled>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Statistical Cookies</h4>
+                    <p>They help us measure site traffic in an aggregated way (Google Analytics 4).</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="toggleAnalytics">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Marketing / Functional Cookies</h4>
+                    <p>Enable advanced widgets and profiled tracking (necessary for bookings via Calendly).</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="toggleMarketing">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="cookie-modal-footer">
+                <button id="savePreferencesBtn" class="btn btn-primary">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
