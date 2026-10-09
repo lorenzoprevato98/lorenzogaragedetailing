@@ -9,7 +9,7 @@
     --white: #ffffff;
     --text-muted: #a0a0a0;
     --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --font-main: 'Outfit', sans-serif;
+    --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Reset & Base Styles */
@@ -286,6 +286,7 @@ header.scrolled {
 .hero {
     position: relative;
     height: 100vh;
+    height: 100dvh;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -381,6 +382,12 @@ header.scrolled {
     position: relative;
     border-radius: 4px;
     overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background-color: var(--dark-grey);
+}
+
+.image-wrapper.square {
+    aspect-ratio: 1 / 1;
 }
 
 .image-wrapper::after {
@@ -395,6 +402,9 @@ header.scrolled {
 }
 
 .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.8s ease;
 }
 
@@ -453,6 +463,7 @@ header.scrolled {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--dark-grey);
 }
 
 .gallery-item.large {
@@ -680,6 +691,10 @@ header.scrolled {
 
 .brand-logo {
     max-width: 150px;
+    height: 80px;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
     margin: 0 auto 1.5rem auto;
     filter: brightness(0) invert(1);
 }
@@ -1089,6 +1104,7 @@ footer {
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     user-select: none;
     cursor: ew-resize;
+    background-color: var(--dark-grey);
 }
 
 .ba-image {
@@ -1652,16 +1668,19 @@ input:checked + .slider:before {
 .slide {
     height: 200px;
     width: 250px;
+    aspect-ratio: 5 / 4;
     flex-shrink: 0;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--dark-grey);
     transition: transform 0.3s ease;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 5 / 4;
     object-fit: cover;
     pointer-events: none; /* Prevents ghost drag */
 }
