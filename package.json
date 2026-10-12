@@ -7,7 +7,6 @@
     "esbuild": "^0.28.2"
   },
   "scripts": {
-    "minify": "esbuild style.css --minify --outfile=style.min.css && esbuild script.js --minify --target=es2018 --outfile=script.min.js",
-    "build": "npm run minify"
+    "minify": "esbuild style.css --minify --outfile=style.min.css && esbuild script.js --minify --target=es2018 --outfile=script.min.js"
   }
 }
