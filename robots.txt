@@ -21,5 +21,7 @@ User-agent: Googlebot
 Allow: /
 
 
-# Sitemap
+# Sitemap & LLMs
 Sitemap: https://lorenzogaragedetailing.it/sitemap.xml
+# LLMs.txt for AI Search Engines (https://llmstxt.org/)
+# Location: https://lorenzogaragedetailing.it/llms.txt
