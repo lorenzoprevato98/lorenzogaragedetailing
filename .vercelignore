@@ -1,0 +1,98 @@
+# File non usati dal sito (originali JPEG già convertiti in WebP): esclusi dal deploy per alleggerirlo.
+# Rigenerare la lista se si aggiungono o rimuovono immagini.
+.env*
+.DS_Store
+README.md
+/Img/AfterInsideDeep.jpeg
+/Img/AfterInsideDeep.webp
+/Img/Blu/IMG_1606.jpeg
+/Img/Blu/Whats1.jpeg
+/Img/Blu/WhatsApp Imaage 2026-06-28 at 08.37.07.webp
+/Img/Blu/WhatsApp Image 2026-05-14 at 10.51.59.webp
+/Img/Blu/WhatsApp Image 2026-05-14 at 10.52.00 copia.webp
+/Img/Blu/WhatsApp Image 2026-05-14 at 10.52.00.webp
+/Img/Blu/WhatsApp Image 2026-06-28 at 08.37.06.webp
+/Img/Blu/WhatsApp Image 2026-06-28 at 08.37.07.webp
+/Img/Blu/cayennelor.jpg
+/Img/Blu/imggggg.jpeg
+/Img/Blu/qvlor.jpg
+/Img/Detailsmatter2.jpeg
+/Img/Giallo/2025-10-30.jpg
+/Img/Giallo/IMG_0875.jpeg
+/Img/Giallo/IMG_8309.jpeg
+/Img/Giallo/IMG_8310.jpeg
+/Img/Giallo/IMG_8322.jpeg
+/Img/Grigio/1WhatsApp Image 2026-06-28 at 08.36.35.webp
+/Img/Grigio/IMG_2955.JPG
+/Img/Grigio/IMG_2956.JPG
+/Img/Grigio/IMG_2957.JPG
+/Img/Grigio/IMG_2958.JPG
+/Img/Grigio/WhatsAapp Image 2026-06-28 at 08.36.35.webp
+/Img/Grigio/WhatsApp Imagae 2026-06-28 at 08.36.35.webp
+/Img/Grigio/WhatsApp Imagae 2026-06-28 at 08.36.36.webp
+/Img/Grigio/WhatsApp Image 2026-05-14 at 10.52.01.webp
+/Img/Grigio/WhatsApp Image 2026-05-14 at 10.52.02.webp
+/Img/Grigio/WhatsApp Image 2026-05-14 at 10.52.24.webp
+/Img/Grigio/WhatsApp Image 2026-06-28 at 08.36.34.webp
+/Img/Grigio/WhatsApp Image 2026-06-28 at 08.36.35.webp
+/Img/Grigio/WhatsApp Image 2026-06-28 at 08.36.36.webp
+/Img/Grigio/WhatsApp Image 2026-0a6-28 at 08.36.35.webp
+/Img/Grigio/bmwlor.jpg
+/Img/InterniAF.jpeg
+/Img/InterniAF.webp
+/Img/Lavorazioni/FerBefAft2.jpeg
+/Img/Lavorazioni/FerrBefAft.jpeg
+/Img/Lavorazioni/WheelDetail.jpeg
+/Img/Lavorazioni/WheelDetail.webp
+/Img/Lavorazioni/beforeANDafter.jpg
+/Img/Lavorazioni/beforeNafter.jpg
+/Img/Lavorazioni/doorafter.jpg
+/Img/Lavorazioni/doorbefore.jpg
+/Img/Lavorazioni/rimozgraffibmw.jpeg
+/Img/Lavorazioni/seatsAFTER.jpg
+/Img/Lavorazioni/seatsBEFORE.jpg
+/Img/Logos/LogoHDAUTO.jpg
+/Img/Logos/apple-touch-icon.png
+/Img/Logos/favicon-192x192.png
+/Img/Logos/favicon-48x48.png
+/Img/Logos/favicon-96x96.png
+/Img/Logos/favicon.ico
+/Img/Logos/favicon.png
+/Img/Logos/ferrarilogo.png
+/Img/Nero/IMG_2953.JPG
+/Img/Nero/IMG_7920.jpeg
+/Img/Nero/blackfelor.jpg
+/Img/Nero/blackferrlor.jpg
+/Img/Rosso/2025-10-31.jpg
+/Img/Rosso/FerrFar.jpeg
+/Img/Rosso/FerrFar.webp
+/Img/Rosso/FerrScritt.jpeg
+/Img/Rosso/FerrScritt.webp
+/Img/Rosso/FerrTop.jpeg
+/Img/Rosso/FerrTop.webp
+/Img/Rosso/IMG_0003.jpeg
+/Img/Rosso/IMG_7410.jpeg
+/Img/Rosso/IMG_7694.jpeg
+/Img/Rosso/IMG_7707.jpeg
+/Img/Rosso/IMG_7911.jpeg
+/Img/Rosso/IMG_8551.jpeg
+/Img/Rosso/IMG_8552.jpeg
+/Img/Rosso/WhatsApp Imaage 2026-06-28 at 08.37.32.webp
+/Img/Rosso/WhatsApp Image 2026-05-14 at 10.51.58.webp
+/Img/Rosso/WhatsApp Image 2026-05-14 at 10.52.25.webp
+/Img/Rosso/WhatsApp Image 2026-05-14 at 10.59.22.webp
+/Img/Rosso/WhatsApp Image 2026-06-28 at 08.37.32.webp
+/Img/Rosso/WhatsApp Image aa2026-06-28 at 08.37.33.webp
+/Img/Rosso/assslll.jpeg
+/Img/Rosso/f40lor.jpg
+/Img/Rosso/ferrari-488-lucidatura-padova.jpg
+/Img/Rosso/ferrarilor.jpg
+/Img/Rosso/opensff.jpeg
+/Img/Rosso/sff.jpeg
+/Img/Rosso/sfffff.jpeg
+/Img/Rosso/tireee.jpeg
+/Img/Verde/IMG_2633.jpeg
+/Img/Verde/gffront.jpeg
+/Img/Verde/greenfer.jpeg
+/Img/Verde/ver.jpeg
+/Img/detailsmatter.jpg
