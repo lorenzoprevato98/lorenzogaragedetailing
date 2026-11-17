@@ -629,17 +629,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Open FAQ if URL hash matches an ID
-        if (window.location.hash) {
-            const targetId = window.location.hash.substring(1);
-            const targetItem = document.getElementById(targetId);
-            if (targetItem) {
-                setTimeout(() => {
+        // Open FAQ if URL hash matches an ID (on load and when an in-page link changes the hash)
+        const openFaqFromHash = (delay) => {
+            const targetItem = window.location.hash ? document.getElementById(window.location.hash.substring(1)) : null;
+            if (!targetItem || !targetItem.classList.contains('faq-item')) return;
+            setTimeout(() => {
+                if (!targetItem.classList.contains('active')) {
                     targetItem.querySelector('.faq-question').click();
-                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 500);
-            }
-        }
+                }
+                targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, delay);
+        };
+        openFaqFromHash(500);
+        window.addEventListener('hashchange', () => openFaqFromHash(0));
     }
 
     // 12. WhatsApp Popup Delay
