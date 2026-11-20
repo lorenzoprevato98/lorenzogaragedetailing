@@ -302,7 +302,7 @@ header.scrolled {
     height: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(5, 5, 5, 0.9)), url('Img/Rosso/ferlorUPDVERT.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: center 30%; /* su schermi larghi mostra la testa di Lorenzo */
     background-attachment: fixed;
     z-index: 1;
 }
